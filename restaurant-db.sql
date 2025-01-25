@@ -1,8 +1,8 @@
 -- Import MySQL Connector/Python
 -- Create database and tables for Restaurant
 
-CREATE DATABASE restaurant-db;
-USE restaurant-db;
+CREATE DATABASE restaurant_db;
+USE restaurant_db;
 
 -- Create MenuItems table
 CREATE TABLE MenuItems (
