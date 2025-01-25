@@ -9,7 +9,7 @@ CREATE TABLE MenuItems (
     ItemID INT AUTO_INCREMENT,
     Name VARCHAR(200),
     Type VARCHAR(100),
-    Price INT,
+    Price DECIMAL(10, 2),
     PRIMARY KEY (ItemID)
 );
 
@@ -34,7 +34,7 @@ CREATE TABLE Bookings (
 
 -- Create Orders table
 CREATE TABLE Orders (
-    OrderID INT,
+    OrderID INT AUTO_INCREMENT,
     TableNo INT,
     MenuID INT,
     BookingID INT,
@@ -51,7 +51,7 @@ CREATE TABLE Employees (
     Address VARCHAR (255),
     Contact_Number INT,
     Email VARCHAR (255),
-    Annual_Salary VARCHAR (100)
+    Annual_Salary DECIMAL(10, 2)
 );
 
 -- Insert data into MenuItems table
@@ -116,23 +116,27 @@ INSERT INTO Employees (EmployeeID, Name, Role, Address, Contact_Number, Email, A
 (6, 'John Millar', 'Receptionist', '245 Dill Square, Lincoln Park, Chicago, IL', 351584508, 'John.m@restaurant.com', 35000);
 
 -- Create stored procedure for PeakHours
+DELIMITER //
 CREATE PROCEDURE PeakHours()
-SELECT HOUR(BookingSlot) AS Hour, COUNT(*) AS NumBookings
-FROM Bookings
-GROUP BY Hour
-ORDER BY NumBookings DESC;
-;
+BEGIN
+    SELECT HOUR(BookingSlot) AS Hour, COUNT(*) AS NumBookings
+    FROM Bookings
+    GROUP BY Hour
+    ORDER BY NumBookings DESC;
+END //
+DELIMITER ;
 
 -- Create stored procedure for GuestStatus
 DELIMITER //
 CREATE PROCEDURE GuestStatus()
 BEGIN
-    SELECT CONCAT(GuestFirstName, ' ', GuestLastName) AS GuestName,
+    SELECT   CONCAT(GuestFirstName, ' ', GuestLastName) AS GuestName,
         CASE 
             WHEN Employees.Role IN ('Manager', 'Assistant Manager') THEN 'Ready to pay'
             WHEN Employees.Role = 'Head Chef' THEN 'Ready to serve'
             WHEN Employees.Role = 'Assistant Chef' THEN 'Preparing Order'
             WHEN Employees.Role = 'Head Waiter' THEN 'Order served'
+            WHEN Employees.Role IS NULL THEN 'No assigned employee'  -- Handle NULL roles
             ELSE 'Unknown status'
         END AS OrderStatus
     FROM Bookings
