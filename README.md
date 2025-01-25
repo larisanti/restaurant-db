@@ -52,7 +52,7 @@ This project integrates a MySQL database with a Python-based front-end applicati
 
 4. Run the Python script to generate the report:
    ```bash
-   python sales_report.py
+   python restaurant_analysis.py
    ```
 
 
