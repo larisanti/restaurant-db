@@ -2,35 +2,34 @@
 
 ## Project Overview
 
-This project showcases the integration of a MySQL database with a Python-based front-end application using MySQL Connector/Python. Completed as part of the Meta Data Engineering course offered by Coursera, the project focuses on developing a detailed analysis and sales report for a restaurant. All data utilized in this project was sourced from the course materials.
+This project integrates a MySQL database with a Python-based front-end application using MySQL Connector/Python. Developed as part of the Meta Data Engineering course from Coursera, the project focuses on generating a detailed analysis and sales report for a restaurant. All data utilized in the project was sourced from the course materials.
 
 ---
 
 ## Project Steps
 
 ### 1. Establish a Connection Pool
-  - Used the `MySQLConnectionPool` class from `mysql.connector` to handle connections.
-  - Defined database configurations in a dictionary (`dbconfig`).
-  - Established a pool named `pool_b` with two connections.
-  - Implemented error handling using a `try-except` block.
+  - Utilized the MySQLConnectionPool class from mysql.connector to manage database connections.
+  - Defined database configurations in a dictionary (dbconfig) for easier management.
+  - Created a connection pool named pool_b with two connections for optimized performance.
+  - Implemented error handling to manage connection failures and timeouts.
 
 ### 2. Execute SQL Queries
-  - Queried sales by month, menu item popularity, and customer trends.
-  - Optimized queries to improve execution time and minimize resource usage.
+  - Executed a series of queries to retrieve sales by month, menu item popularity, and customer booking trends.
+  - Optimized queries to reduce execution time and resource usage, ensuring efficient data retrieval.
 
 ### 3. Data Analysis and Report
-  - Executed queries and formatted results using Python.
-  - Visualized the sales report and presented insights using the Python-based visualization library Matplotlib.
+  - Retrieved and formatted query results using Python.
+  - Visualized the data and presented the analysis in the form of a detailed sales report, utilizing Matplotlib for clear and informative charts.
 
 ---
 
 ## Built With
 
-- **MySQL**: For creating the database, populating it, and storing and querying restaurant sales data.
-- **MySQL Connector/Python**: For connecting Python to the MySQL database.
-- **Python**: For scripting and database interaction.
-- **Matplotlib**: For data visualization.
-
+  - MySQL: Used for creating, populating, and querying the restaurant database.
+  - MySQL Connector/Python: Enabled the connection between Python and MySQL for database operations.
+  - Python: Used for scripting, querying the database, and performing analysis.
+  - Matplotlib: Utilized for data visualization and generating graphical reports.
 
 ---
 
@@ -44,12 +43,12 @@ This project showcases the integration of a MySQL database with a Python-based f
 
 2. Install the required Python libraries:
    ```bash
-   pip install mysql-connector-python
+   pip install mysql-connector-python matplotlib
    ```
 
 3. Set up the MySQL database:
    - Import the provided `.sql` file to create and populate the database.
-   - Update the `dbconfig` dictionary in the Python script with your MySQL credentials.
+   - Update the dbconfig dictionary in the Python script with your MySQL credentials for the database connection.
 
 4. Run the Python script to generate the report:
    ```bash
