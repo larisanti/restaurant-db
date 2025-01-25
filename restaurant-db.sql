@@ -116,16 +116,12 @@ INSERT INTO Employees (EmployeeID, Name, Role, Address, Contact_Number, Email, A
 (6, 'John Millar', 'Receptionist', '245 Dill Square, Lincoln Park, Chicago, IL', 351584508, 'John.m@restaurant.com', 35000);
 
 -- Create stored procedure for PeakHours
-DELIMITER //
 CREATE PROCEDURE PeakHours()
-BEGIN
-    SELECT HOUR(BookingSlot) AS Hour, COUNT(*) AS NumBookings
-    FROM Bookings
-    GROUP BY Hour
-    ORDER BY NumBookings DESC;
-END;
-//
-DELIMITER ;
+SELECT HOUR(BookingSlot) AS Hour, COUNT(*) AS NumBookings
+FROM Bookings
+GROUP BY Hour
+ORDER BY NumBookings DESC;
+;
 
 -- Create stored procedure for GuestStatus
 DELIMITER //
