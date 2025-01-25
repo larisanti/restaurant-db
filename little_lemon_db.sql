@@ -1,5 +1,5 @@
 -- Import MySQL Connector/Python
--- Create database and tables for Little Lemon
+-- Create database and tables for Restaurant
 
 -- Check if the database exists, and delete if it does
 DROP DATABASE IF EXISTS little_lemon_db;
