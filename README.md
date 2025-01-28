@@ -37,8 +37,8 @@ This project integrates a MySQL database with a Python-based front-end applicati
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/larisanti/restaurant-db-sql.git
-   cd restaurant-db-sql
+   git clone https://github.com/larisanti/restaurant-db.git
+   cd restaurant-db
    ```
 
 2. Install the required Python libraries:
