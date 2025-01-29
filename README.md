@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project integrates a MySQL database with a Python-based front-end application using MySQL Connector/Python. Developed as part of the Meta Data Engineering course from Coursera, the project focuses on generating a detailed analysis and sales report for a restaurant. All data utilized in the project was sourced from the course materials.
+This project integrates a MySQL database with a Python-based front-end application using MySQL Connector/Python. Developed as part of the Meta Data Engineering course from Meta, the project focuses on generating a detailed analysis and sales report for a restaurant. All data utilized in the project was sourced from the course materials.
 
 ---
 
