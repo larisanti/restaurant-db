@@ -1,35 +1,62 @@
-# Restaurant Analysis and Sales Report
+# MySQL Restaurant Database & Python Analytics System
 
-## Project Overview
+## Overview
 
-This project integrates a MySQL database with a Python-based front-end application using MySQL Connector/Python. Developed as part of the Meta Data Engineering course from Meta, the project focuses on generating a detailed analysis and sales report for a restaurant. All data utilized in the project was sourced from the course materials.
+This project combines a MySQL backend with Python analytics through MySQL Connector/Python to track operations from bookings to sales. Developed during Meta's Data Engineering course, the solution features 13 relational tables, connection pooling for performance, and automated Matplotlib visualizations.
 
 ---
 
-## Project Steps
+## Implementation Process
 
-### 1. Establish a Connection Pool
-  - Utilized the MySQLConnectionPool class from mysql.connector to manage database connections.
-  - Defined database configurations in a dictionary (dbconfig) for easier management.
-  - Created a connection pool named pool_b with two connections for optimized performance.
-  - Implemented error handling to manage connection failures and timeouts.
+### 1. Database Architecture
+  - Created the ER diagram.
+  - Set up a MySQL instance in MySQL Workbench.
+  - Implemented the database schema.
 
-### 2. Execute SQL Queries
-  - Executed a series of queries to retrieve sales by month, menu item popularity, and customer booking trends.
-  - Optimized queries to reduce execution time and resource usage, ensuring efficient data retrieval.
+  ![ERD](https://github.com/larisanti/restaurant-db/blob/main/images/ERD.png)
 
-### 3. Data Analysis and Report
-  - Retrieved and formatted query results using Python.
-  - Visualized the data and presented the analysis in the form of a detailed sales report, utilizing Matplotlib for clear and informative charts.
+
+### 2. Database Connection
+  - Established database connectivity using  `mysql-connector-python`.
+  - Configured secure connection parameters.
+
+  ```python
+db_config = {
+    'host': 'localhost',
+    'user': '-------',  # Insert your username
+    'password': '--------',  # Insert your password
+    'database': 'restaurant_db'
+}
+
+# Connection handling with error management
+try:
+    conn = mysql.connector.connect(**db_config)
+    cursor = conn.cursor()
+    print("Successfully connected to database")
+except mysql.connector.Error as err:
+    print(f"Database connection failed: {err}")
+    exit()
+```
+
+### 3. Query Execution
+  - Executed queries to insert sample data.
+  - Verified data integrity by counting records across tables.
+
+### 4. Data Analysis
+Generated visualizations using `matplotlib`.
+
+  ![Booking Activity by Hour](https://github.com/larisanti/restaurant-db/blob/main/images/3-booking-activity.png)
+   
+  *See more of the data analysis in the [restaurant-analysis.ipynb](https://github.com/larisanti/restaurant-db/blob/main/restaurant-analysis.ipynb) file.*
 
 ---
 
 ## Built With
 
-  - MySQL: Used for creating, populating, and querying the restaurant database.
-  - MySQL Connector/Python: Enabled the connection between Python and MySQL for database operations.
-  - Python: Used for scripting, querying the database, and performing analysis.
-  - Matplotlib: Utilized for data visualization and generating graphical reports.
+  - MySQL Workbench
+  - MySQL Connector/Python
+  - Python
+  - Matplotlib
 
 ---
 
@@ -48,14 +75,8 @@ This project integrates a MySQL database with a Python-based front-end applicati
 
 3. Set up the MySQL database:
    - Import the provided `.sql` file to create and populate the database.
-   - Update the dbconfig dictionary in the Python script with your MySQL credentials for the database connection.
-
-4. Run the Python script to generate the report:
-   ```bash
-   python restaurant_analysis.py
-   ```
+   - Update your MySQL credentials for the database connection.
 
 
 ## License
 This project is licensed under the MIT License. For more details, see the [LICENSE](LICENSE) file.
-
