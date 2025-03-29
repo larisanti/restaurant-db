@@ -1,7 +1,5 @@
 # MySQL Restaurant Database & Python Analytics System
 
-## Overview
-
 This project combines a MySQL backend with Python analytics through MySQL Connector/Python to track operations from bookings to sales. Developed during Meta's Data Engineering course, the solution features 13 relational tables, connection pooling for performance, and automated Matplotlib visualizations.
 
 ---
