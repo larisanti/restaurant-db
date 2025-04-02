@@ -43,7 +43,7 @@ except mysql.connector.Error as err:
 ### 4. Data Analysis
 Generated visualizations using `matplotlib`.
 
-  ![Booking Activity by Hour](https://github.com/larisanti/restaurant-db/blob/main/images/3-booking-activity.png)
+  ![Booking Activity by Hour](https://github.com/larisanti/restaurant-db/blob/main/images/3-booking-activity-hour.png)
    
   *See more of the data analysis in the [restaurant-analysis.ipynb](https://github.com/larisanti/restaurant-db/blob/main/restaurant-analysis.ipynb) file.*
 
