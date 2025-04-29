@@ -1,5 +1,10 @@
 # MySQL Restaurant Database & Python Analytics System
 
+[![MySQL Workbench](https://img.shields.io/badge/MySQL%20Workbench-orange?logo=mysql&logoColor=white)](https://www.mysql.com/products/workbench/)
+[![MySQL Connector/Python](https://img.shields.io/badge/MySQL%20Connector--Python-blue?logo=python&logoColor=white)](https://dev.mysql.com/doc/connector-python/en/)
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-87CEEB?logo=matplotlib&logoColor=white)](https://matplotlib.org/)
+
 This project combines a MySQL backend with Python analytics through MySQL Connector/Python to track operations from bookings to sales. Developed during Meta's Data Engineering course, the solution features 13 relational tables, connection pooling for performance, and automated Matplotlib visualizations.
 
 ---
